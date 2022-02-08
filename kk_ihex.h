@@ -110,12 +110,17 @@
 
 #include <stdint.h>
 
+#ifndef __cplusplus
 #ifdef IHEX_USE_STDBOOL
 #include <stdbool.h>
 typedef bool ihex_bool_t;
 #else
 typedef uint_fast8_t ihex_bool_t;
 #endif
+#else
+typedef bool ihex_bool_t;
+#endif
+
 
 typedef uint_least32_t ihex_address_t;
 typedef uint_least16_t ihex_segment_t;
